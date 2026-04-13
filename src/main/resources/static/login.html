@@ -3,9 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Login page for user profile application">
+    <title>Login - User Profile Cards</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-    <h4>Login Page</h4>
+<body class="login-page">
+    <div class="login-container">
+        <header class="login-header">
+            <h1>Welcome Back</h1>
+            <p class="login-subtitle">Sign in to access your profile cards</p>
+        </header>
+        
+        <main class="login-main">
+            <form class="login-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        required 
+                        placeholder="Enter your username"
+                        aria-describedby="username-help"
+                    >
+                    <small id="username-help">Enter your registered username</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        required 
+                        placeholder="Enter your password"
+                        aria-describedby="password-help"
+                    >
+                    <small id="password-help">Enter your secure password</small>
+                </div>
+                
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="remember" name="remember">
+                        <span class="checkmark"></span>
+                        Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-full">
+                    Sign In
+                </button>
+            </form>
+            
+            <div class="login-divider">
+                <span>OR</span>
+            </div>
+            
+            <div class="alternative-actions">
+                <a href="/" class="btn btn-secondary btn-full">
+                    Continue as Guest
+                </a>
+                <p class="signup-prompt">
+                    Don't have an account? <a href="#" class="signup-link">Sign up</a>
+                </p>
+            </div>
+        </main>
+    </div>
+    
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            // Basic form validation
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username && password) {
+                // Redirect to main page (in a real app, this would authenticate first)
+                window.location.href = '/';
+            }
+        }
+    </script>
 </body>
 </html>
