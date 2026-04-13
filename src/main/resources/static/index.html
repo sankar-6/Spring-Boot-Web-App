@@ -1,83 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Interactive user profile cards with random user data" />
-    <title>User Profile Cards - Random User Generator</title>
+    <title>Document</title>
     <link rel="stylesheet" href="./style.css" />
-    <link rel="preconnect" href="https://randomuser.me" />
   </head>
 
   <body>
-    <header class="app-header">
-      <h1>User Profile Cards</h1>
-      <p class="subtitle">Discover random user profiles from around the world</p>
-    </header>
+    <h2>Card</h2>
 
-    <main class="main-content">
-      <section class="user-section">
-        <div class="card" id="userCard">
-          <div class="card-image-container">
-            <img 
-              id="userImage" 
-              src="./img_john_doe.png" 
-              alt="User Avatar" 
-              class="user-avatar"
-            />
-            <div class="loading-spinner" id="loadingSpinner" style="display: none;">
-              <div class="spinner"></div>
-            </div>
-          </div>
-          <div class="card-content">
-            <h2 id="userName" class="user-name">
-              <b>John Doe</b>
-            </h2>
-            <p id="designation" class="user-designation">
-              Architect & Engineer
-            </p>
-            <div class="user-meta" id="userMeta" style="display: none;">
-              <span class="meta-item" id="userAge"></span>
-              <span class="meta-item" id="userCountry"></span>
-            </div>
-          </div>
-        </div>
+    <div class="card">
+      <img src="./img_john_doe.png" alt="Avatar" style="width: 100%" />
+      <div class="container">
+        <h4 id="userName"><b>John Doe</b> </h4>
 
-        <div class="button-container">
-          <button 
-            id="randomUserBtn" 
-            onclick="randomUser()" 
-            class="btn btn-primary"
-            aria-label="Generate new random user"
-          >
-            <span class="btn-text">Generate Random User</span>
-            <span class="btn-icon">🎲</span>
-          </button>
-          
-          <button 
-            id="refreshBtn" 
-            onclick="refreshUser()" 
-            class="btn btn-secondary"
-            aria-label="Refresh current user data"
-            style="display: none;"
-          >
-            <span class="btn-text">Refresh</span>
-            <span class="btn-icon">🔄</span>
-          </button>
-        </div>
+        <p id="designation">Architect & Engineer</p>
+      </div>
+    </div>
+    <!-- <button onclick="showNextUser()">
+        ShowNext
+    </button> -->
 
-        <div class="stats-container" id="statsContainer" style="display: none;">
-          <div class="stat-item">
-            <span class="stat-label">Users Generated:</span>
-            <span class="stat-value" id="userCount">0</span>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="app-footer">
-      <p>Powered by <a href="https://randomuser.me" target="_blank" rel="noopener">RandomUser.me</a> API</p>
-    </footer>
+    <button onclick="randomUser()">
+        showRandomuser
+    </button>
 
     <script src="./site.js"></script>
   </body>
